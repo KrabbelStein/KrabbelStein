@@ -49,10 +49,16 @@ h1{
     background:#1f1f26;
 }
 
-/* Emoji */
-.icon{
-    font-size:50px;
-    margin-bottom:15px;
+.icon img{
+    width:50px;       /* gleiche Höhe wie Emoji */
+    height:50px;
+    object-fit:cover;
+    border-radius:22%; /* runde Ecken wie vorher */
+    display:block;
+    margin:auto;
+    background:#000;
+    box-shadow:0 4px 10px rgba(0,0,0,0.5);
+    transition:0.2s;
 }
 
 /* Text */
