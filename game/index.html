@@ -359,7 +359,15 @@ function create() {
   }
 
   document.getElementById('startBtn').onclick=()=>{if(!running) startGame();};
-  document.getElementById('resetBtn').onclick=()=>{resetGame();};
+document.getElementById('resetBtn').onclick = () => {
+  if (running) {
+    // Zurück zum Spiel-Hauptmenü
+    resetGame();
+  } else {
+    // Bereits im Hauptmenü → zur Top-Level Domain
+    window.location.href = '/';
+  }
+};
 }
 
 function update(){}
