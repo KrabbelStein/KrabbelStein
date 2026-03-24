@@ -1,27 +1,100 @@
 <!doctype html>
 <html lang="de">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Redirecting…</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KrabbelStein</title>
 
-  <!-- Sofort-Redirect -->
-  <meta http-equiv="refresh" content="0; url=/game/">
+<style>
 
-  <script>
-    // JS-Redirect (ersetzt History, kein Zurück-Button)
-    window.location.replace("/game/");
-  </script>
+html,body{
+    margin:0;
+    padding:0;
+    background:#0b0b0f;
+    color:#fff;
+    font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+}
 
-  <style>
-    html,body{
-      margin:0;
-      width:100%;
-      height:100%;
-      background:#000;
-    }
-  </style>
+/* Titel */
+h1{
+    text-align:center;
+    margin:40px 0 10px;
+}
+
+/* Navigation Grid */
+.nav-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));
+    gap:20px;
+    max-width:900px;
+    margin:40px auto;
+    padding:10px;
+}
+
+/* Kachel */
+.nav-tile{
+    background:#17171c;
+    border-radius:16px;
+    padding:30px;
+    text-align:center;
+    text-decoration:none;
+    color:white;
+    transition:0.2s;
+    box-shadow:0 4px 12px rgba(0,0,0,0.4);
+}
+
+/* Hover Effekt */
+.nav-tile:hover{
+    transform:scale(1.05);
+    background:#1f1f26;
+}
+
+/* Emoji */
+.icon{
+    font-size:50px;
+    margin-bottom:15px;
+}
+
+/* Text */
+.title{
+    font-size:20px;
+    font-weight:bold;
+}
+
+/* Footer */
+#footer{
+    text-align:center;
+    padding:20px;
+    font-size:14px;
+    color:#888;
+    margin-top:40px;
+    border-top:1px solid #222;
+}
+
+</style>
 </head>
+
 <body>
+
+<h1>KrabbelStein</h1>
+
+<div class="nav-grid">
+
+  <a href="/game" class="nav-tile">
+    <div class="icon">🎮</div>
+    <div class="title">Games</div>
+  </a>
+
+  <a href="/brawlstars" class="nav-tile">
+    <div class="icon">⭐</div>
+    <div class="title">Brawl Stars</div>
+  </a>
+
+</div>
+
+<div id="footer">
+  © 2026 KrabbelStein · All rights reserved
+</div>
+
 </body>
 </html>
