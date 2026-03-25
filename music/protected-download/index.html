@@ -2,10 +2,85 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Maintenance Work</title>
+<title>Protected Download</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+
+<style>
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #f4f4f4;
+  margin: 0;
+}
+
+.container {
+  text-align: center;
+  background: #fff;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  max-width: 400px;
+}
+
+input {
+  padding: 10px;
+  font-size: 16px;
+  margin: 10px 0;
+  width: 100%;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+}
+
+button:hover {
+  background: #45a049;
+}
+</style>
 </head>
 <body>
-<h1>Maintenance Work</h1>
-<p>Sorry, the page is currently under maintenance.</p>
+
+<div class="container">
+  <h1>Download</h1>
+  <p>Complete the captcha and enter the password to continue.</p>
+
+  <!-- Cloudflare Turnstile -->
+  <div class="cf-turnstile" data-sitekey="0x4AAAAAACv4CeRJmFaxMVN2"></div>
+
+  <input type="password" id="pw" placeholder="Enter password">
+  <button onclick="check()">Download</button>
+</div>
+
+<script>
+function check(){
+  const token = document.querySelector('[name="cf-turnstile-response"]').value;
+  if(!token){
+    alert("Please complete the captcha first");
+    return;
+  }
+
+  const pw = document.getElementById("pw").value;
+
+  if(pw === "123"){
+    // Google Drive Direkt-Download
+    window.location.href = "https://drive.google.com/uc?export=download&id=1DTPbZUr92fH-jAaGJNV9ga24ldmErnIT";
+  } else {
+    alert("Wrong password");
+  }
+}
+</script>
+
 </body>
 </html>
