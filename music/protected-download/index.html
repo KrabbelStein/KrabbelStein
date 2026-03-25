@@ -40,27 +40,25 @@ p{
     margin-bottom:20px;
 }
 
-/* Input */
-input{
+/* Input & Button gleich machen */
+input, button {
     width:100%;
     padding:12px;
     margin:15px 0;
     border-radius:10px;
     border:none;
-    background:#1f1f26;
-    color:#fff;
     font-size:16px;
+    box-sizing: border-box; /* Wichtig für gleiche Höhe */
 }
 
-/* Button */
-button{
-    width:100%;
-    padding:12px;
-    border:none;
-    border-radius:10px;
+input{
     background:#1f1f26;
     color:#fff;
-    font-size:16px;
+}
+
+button{
+    background:#1f1f26;
+    color:#fff;
     cursor:pointer;
     transition:0.2s;
 }
